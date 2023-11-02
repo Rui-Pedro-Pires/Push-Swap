@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:42:06 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/10/31 18:31:14 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/02 17:12:36 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	// check if the number of arguments is only 1 check if the number of arguments is 2, but the second arguments comes empty
-	if (argc == 1 || argc == 2 && !argv[1][0])
+	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (0);
 	// creat the linked list (stack_a) with argumento in format of string 
 	else if (argc == 2)
@@ -35,15 +35,16 @@ int	main(int argc, char **argv)
 	}
 	//check if the list as only 2 elements
 	if (ft_stack_len(stack_a) == 2)
-		ft_two_sort(stack_a);
+		ft_two_sort(&stack_a);
 	else if (ft_stack_len(stack_a) == 3)
 		ft_three_sort(&stack_a);
-	else
+	else if (ft_stack_len(stack_a) >= 4)
 	{
-		ft_split_list(&stack_a, &stack_b);
-		ft_three_sort(&stack_a);
-		ft_three_sort(&stack_b);
-		ft_merge_list(&stack_a, &stack_b);
+		ft_push_b(&stack_a, &stack_b);
+		ft_push_b(&stack_a, &stack_b);
+		ft_push_b(&stack_a, &stack_b);
+		ft_push_b(&stack_a, &stack_b);
+	// 	ft_reverse_rotate_a(&stack_a);
 	}
 	// 	return
 	// // check if the stack as only 3 elements
@@ -52,12 +53,19 @@ int	main(int argc, char **argv)
 	// // do the algoritm to sort the numbers
 	// else
 		//........
+	stack_a = ft_find_last_node(stack_a);
 	while (stack_a)
 	{
 		printf("%d\n", stack_a->nb);
-		stack_a = stack_a->next;
+		stack_a = stack_a->prev;
 	}
 	printf("---------------\n");
-	// ft_clean_list(&stack_a);
+	stack_b = ft_find_last_node(stack_b);
+	while (stack_b)
+	{
+		printf("%d\n", stack_b->nb);
+		stack_b = stack_b->prev;
+	}
+	//ft_clean_list(&stack_a);
 	return (0);
 }

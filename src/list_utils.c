@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 15:41:03 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/10/30 15:01:08 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/02 15:59:23 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,14 +83,5 @@ list	*ft_find_last_node(list *stack)
 		return (NULL);
 	while (stack->next)
 		stack = stack->next;
-	return (stack);
-}
-
-list	*ft_find_first_node(list *stack)
-{
-	if (!stack)
-		return (NULL);
-	while (stack->prev)
-		stack = stack->prev;
 	return (stack);
 }

@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:58:44 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/10/31 18:28:02 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/02 15:54:56 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,27 +51,24 @@ void	ft_creat_new_node(list **stack_a, int nb)
 	if (!new_node)
 		return ;
 	last_node = ft_find_last_node(*stack_a);
+	new_node->nb = nb;
+	new_node->prev = last_node;
+	new_node->next = NULL;
 	if (!last_node)
 		*stack_a = new_node;
 	else
 		last_node->next = new_node;
-	new_node->nb = nb;
-	new_node->prev = last_node;
-	new_node->next = NULL;
 }
 
 void	ft_clean_list(list **stack)
 {
-	list	*last_node;
 	list	*temp;
 	
-	last_node = ft_find_last_node(*stack);
-	while (last_node->prev)
+	while (*stack)
 	{
-		temp = last_node->prev;
-		free (last_node);
-		last_node = temp;
+		temp = (*stack)->next;
+		free (*stack);
+		*stack = temp;
 	}
-	free(last_node);
-	last_node = NULL;
+	*stack = NULL;
 }

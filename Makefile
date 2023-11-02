@@ -3,7 +3,8 @@ SRC = ./src/creat_list.c\
 	./src/swap_functions1.c\
 	./src/swap_functions2.c\
 	./src/swap_functions3.c\
-	./src/ft_algorithms.c\
+	./src/algorithms.c\
+	./src/algorithms_utils.c\
 	./src/main.c\
 
 CC = cc

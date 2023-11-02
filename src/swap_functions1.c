@@ -6,43 +6,46 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 20:22:46 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/10/31 16:27:55 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/02 15:53:47 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_swap_a(list	*stack_a)
+void	ft_swap_a(list	**stack_a)
 {
-	int	x;
+	list	*temp;
 
-	x = stack_a->nb;
-	stack_a->nb = stack_a->next->nb;
-	stack_a->next->nb = x;
+	temp = (*stack_a)->next->next;
+	if (temp)
+		temp->prev = *stack_a;
+	*stack_a = (*stack_a)->next;
+	(*stack_a)->next = (*stack_a)->prev;
+	(*stack_a)->next->next = temp;
+	(*stack_a)->next->prev = *stack_a;
+	(*stack_a)->prev = NULL;
 	printf("%s\n", "sa");
 }
 
-void	ft_swap_b(list	*stack_b)
+void	ft_swap_b(list	**stack_b)
 {
-	int	x;
+	list	*temp;
 
-	x = stack_b->nb;
-	stack_b->nb = stack_b->next->nb;
-	stack_b->next->nb = x;
-	printf("%s\n", "sa");
+	temp = (*stack_b)->next->next;
+	if (temp)
+		temp->prev = *stack_b;
+	*stack_b = (*stack_b)->next;
+	(*stack_b)->next = (*stack_b)->prev;
+	(*stack_b)->next->next = temp;
+	(*stack_b)->next->prev = *stack_b;
+	(*stack_b)->prev = NULL;
+	printf("%s\n", "sb");
 }
 
-void	ft_swap_a_b(list *stack_a, list *stack_b)
+void	ft_swap_a_b(list **stack_a, list **stack_b)
 {
-	int	x;
-	int	j;
-
-	x = stack_a->nb;
-	stack_a->nb = stack_a->next->nb;
-	stack_a->next->nb = x;
-	j = stack_b->nb;
-	stack_b->nb = stack_b->next->nb;
-	stack_b->next->nb = j;
+	ft_swap_a(stack_a);
+	ft_swap_b(stack_b);
 	printf("%s\n", "ss");
 }
 
