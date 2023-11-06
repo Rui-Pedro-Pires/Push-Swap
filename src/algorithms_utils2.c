@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:07:55 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/06 17:26:43 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:35:02 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_target_b(list *stack_a, list *stack_b)
 		temp = stack_a;
 		while (temp)
 		{
-			if (stack_b->nb < temp->nb && stack_b->nb > number_save)
+			if (stack_b->nb > temp->nb && stack_b->nb < number_save)
 			{
 				number_save = stack_b->nb;
 				target_node = temp;
