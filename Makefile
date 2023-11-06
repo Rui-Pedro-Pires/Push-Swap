@@ -4,7 +4,10 @@ SRC = ./src/creat_list.c\
 	./src/swap_functions2.c\
 	./src/swap_functions3.c\
 	./src/algorithms.c\
-	./src/algorithms_utils.c\
+	./src/algorithms_utils1.c\
+	./src/algorithms_utils2.c\
+	./src/algorithms_utils3.c\
+	./src/algorithms_utils4.c\
 	./src/main.c\
 
 CC = cc
@@ -15,20 +18,31 @@ RM = rm
 
 NAME = push_swap
 
-LIBFT = ./Libft/libft.a
+LIBFT = ./include/Libft/libft.a
 
-all:	$(LIBFT) $(NAME)
+FT_PRINTF = ./include/ft_printf/libftprintf.a
 
-$(NAME):
-	${CC} -g ${CFLAGS} ${SRC} ${LIBFT} -o $(NAME)
+OBJS = $(SRC:.c=.c)
+
+all:	$(NAME)
+
+$(NAME): $(LIBFT) $(FT_PRINTF) $(OBJS)
+	@${CC} ${CFLAGS} ${OBJS} -o $(NAME) ${LIBFT} ${FT_PRINTF}
 
 $(LIBFT):
-	@make -C Libft -s
+	@cd ./include/Libft/ && make -s
+
+$(FT_PRINTF):
+	@cd ./include/ft_printf/ && make -s
+
 clean:
-	@make clean -C Libft -s
+	@cd ./include/Libft/ && make clean -s
+	@cd ./include/ft_printf/ && make clean -s
+	$(RM) $(OBJS)
 
 fclean: clean
-	@make fclean -C Libft -s
+	@cd ./include/Libft/ && make fclean -s
+	@cd ./include/ft_printf/ && make fclean -s
 	$(RM) -f $(NAME)
 
 re:	fclean all
