@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 20:22:46 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/06 16:47:27 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:07:44 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	ft_swap_a(list	**stack_a, bool print)
 	(*stack_a)->next->next = temp;
 	(*stack_a)->next->prev = *stack_a;
 	(*stack_a)->prev = NULL;
-	printf("%s\n", "sa");
+	if (!print)
+		printf("%s\n", "sa");
 }
 
 void	ft_swap_b(list	**stack_b, bool print)
@@ -39,13 +40,14 @@ void	ft_swap_b(list	**stack_b, bool print)
 	(*stack_b)->next->next = temp;
 	(*stack_b)->next->prev = *stack_b;
 	(*stack_b)->prev = NULL;
-	printf("%s\n", "sb");
+	if (!print)
+		printf("%s\n", "sb");
 }
 
 void	ft_swap_a_b(list **stack_a, list **stack_b)
 {
-	ft_swap_a(stack_a);
-	ft_swap_b(stack_b);
+	ft_swap_a(stack_a, true);
+	ft_swap_b(stack_b, true);
 	printf("%s\n", "ss");
 }
 

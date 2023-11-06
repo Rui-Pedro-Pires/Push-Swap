@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:42:06 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/06 16:47:51 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:06:51 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (0);
 	else
-		ft_creat_list_arg(&stack_a, argv);
+		ft_creat_list(&stack_a, argc, argv + 1);
 	if (!stack_a)
 	{
 		printf("%s", "Error");

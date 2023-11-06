@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 17:56:22 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/10/31 16:27:15 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:06:09 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_reverse_rotate_a_b(list **stack_a, list **stack_b)
 {
-	ft_reverse_rotate_a(stack_a);
-	ft_reverse_rotate_b(stack_b);
+	ft_reverse_rotate_a(stack_a, true);
+	ft_reverse_rotate_b(stack_b, true);
 	printf("%s\n", "rrr");
 }

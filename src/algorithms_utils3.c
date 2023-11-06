@@ -6,18 +6,11 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 11:15:17 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/06 16:33:37 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:28:58 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void	ft_add_elements2(list *stack_a, list *stack_b)
-{
-	ft_add_index(stack_a);
-	ft_add_index(stack_b);
-	ft_target_b(stack_a, stack_b);
-}
 
 void	ft_prep_push(list **stack, list *target, int x)
 {
@@ -52,6 +45,12 @@ void	ft_move_to_b(list **stack_a, list **stack_b)
 	ft_prep_push(stack_a, cheapest_node, 1);
 	ft_prep_push(stack_b, cheapest_node->target, 2);
 	ft_push_b(stack_a, stack_b);
+}
+
+void	ft_move_to_a(list **stack_a, list **stack_b)
+{
+	ft_prep_push(stack_a, (*stack_b)->target, 1);
+	ft_push_a(stack_a, stack_b);
 }
 
 void	ft_rotate(list **stack_a, list **stack_b, list *target_node)

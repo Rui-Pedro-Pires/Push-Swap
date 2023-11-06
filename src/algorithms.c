@@ -6,26 +6,20 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 11:00:30 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/02 17:27:09 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:02:41 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_two_sort(list **stack_a)
-{
-	if ((*stack_a)->nb > (*stack_a)->next->nb)
-		ft_swap_a(stack_a);
-}
-
 void	ft_three_sort(list **stack_a)
 {
 	if ((*stack_a)->nb > (*stack_a)->next->nb && (*stack_a)->nb > (*stack_a)->next->next->nb)
-		ft_rotate_a(stack_a);
+		ft_rotate_a(stack_a, false);
 	else if ((*stack_a)->next->nb > (*stack_a)->nb && (*stack_a)->next->nb > (*stack_a)->next->next->nb )
-		ft_reverse_rotate_a(stack_a);
+		ft_reverse_rotate_a(stack_a, false);
 	if ((*stack_a)->nb > (*stack_a)->next->nb)
-		ft_swap_a(stack_a);
+		ft_swap_a(stack_a, false);
 }
 
 void	ft_sort(list **stack_a, list **stack_b)

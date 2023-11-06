@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 15:41:03 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/02 15:59:23 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:07:06 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_check_numbers_arg(char **numbers)
 	int	i;
 	int	x;
 	
-	i = 1;
+	i = 0;
 	while (numbers[i])
 	{
 		if (ft_atoi(numbers[i]) < -2147483648 
