@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:29:43 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/06 17:46:34 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:57:09 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ft_min_to_top(list **stack_a)
 {
 	while ((*stack_a)->nb != ft_min_node(*stack_a)->nb)
 	{
-		if ((*stack_a)->above_median)
+		if ((ft_min_node(*stack_a))->above_median)
 			ft_rotate_a(stack_a, false);
 		else
 			ft_reverse_rotate_a(stack_a, false);

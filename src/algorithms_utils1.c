@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:02:09 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/06 17:46:30 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/06 18:00:14 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,10 @@ void	ft_add_elements2(list *stack_a, list *stack_b)
 
 int	ft_stack_sorted(list *stack)
 {
-	list	*temp;
-
-	temp = stack->next;
-	while (stack->next)
+	while (stack)
 	{
-		while (temp)
-		{
-			if (stack->nb > temp->nb)
-				return (0);
-			temp = temp->next;
-		}
+		if (stack->nb < stack->next->nb)
+			return (0);
 		stack = stack->next;
 	}
 	return (1);

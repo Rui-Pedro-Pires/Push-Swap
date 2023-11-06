@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:42:06 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/06 17:46:35 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:52:03 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ int	main(int argc, char **argv)
 		else
 			ft_sort(&stack_a, &stack_b);
 	}
-	ft_clean_list(&stack_a);
+	while (stack_a)
+	{
+		printf("%d", stack_a->nb);
+		stack_a = stack_a->next;
+	}
+	// ft_clean_list(&stack_a);
 	return (0);
 }

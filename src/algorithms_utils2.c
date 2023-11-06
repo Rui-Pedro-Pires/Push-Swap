@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:07:55 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/06 17:46:00 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/06 18:07:11 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void	ft_target_a(list *stack_a, list *stack_b)
 		temp = stack_b;
 		while (temp)
 		{
-			if (stack_a->nb < temp->nb && stack_a->nb > number_save)
+			if (temp->nb < stack_a->nb && temp->nb > number_save)
 			{
-				number_save = stack_a->nb;
+				number_save = temp->nb;
 				target_node = temp;
 			}
 			temp = temp->next;
@@ -51,9 +51,9 @@ void	ft_target_b(list *stack_a, list *stack_b)
 		temp = stack_a;
 		while (temp)
 		{
-			if (stack_b->nb > temp->nb && stack_b->nb < number_save)
+			if (temp->nb > stack_b->nb && temp->nb < number_save)
 			{
-				number_save = stack_b->nb;
+				number_save = temp->nb;
 				target_node = temp;
 			}
 			temp = temp->next;
@@ -90,7 +90,8 @@ void	ft_cheapest_node(list *stack_a)
 {
 	list	*cheapest_node;
 	long	cost;
-
+	if (!stack_a)
+		return ;
 	cost = 21474836478;
 	while (stack_a)
 	{
