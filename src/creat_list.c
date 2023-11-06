@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:58:44 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/02 15:54:56 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:30:13 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_creat_list_arg(list **stack_a, char **numbers)
 {
 	int	i;
 	
-	i = 1;
+	i = 0;
 	if (!ft_check_numbers_arg(numbers))
 		return ;
 	while (numbers[i])
@@ -60,15 +60,10 @@ void	ft_creat_new_node(list **stack_a, int nb)
 		last_node->next = new_node;
 }
 
-void	ft_clean_list(list **stack)
+void	ft_creat_list(list **stack_a, int argc, char **argv)
 {
-	list	*temp;
-	
-	while (*stack)
-	{
-		temp = (*stack)->next;
-		free (*stack);
-		*stack = temp;
-	}
-	*stack = NULL;
+	if (argc == 2)
+		ft_creat_list_str(stack_a, argv[0]);
+	else
+		ft_creat_list_arg(stack_a, argv);
 }
