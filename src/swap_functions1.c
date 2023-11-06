@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 20:22:46 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/06 17:46:47 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/06 18:12:02 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_swap_a(list	**stack_a, bool print)
 	(*stack_a)->next->prev = *stack_a;
 	(*stack_a)->prev = NULL;
 	if (!print)
-		printf("%s\n", "sa");
+		ft_printf("%s\n", "sa");
 }
 
 void	ft_swap_b(list	**stack_b, bool print)
@@ -41,14 +41,14 @@ void	ft_swap_b(list	**stack_b, bool print)
 	(*stack_b)->next->prev = *stack_b;
 	(*stack_b)->prev = NULL;
 	if (!print)
-		printf("%s\n", "sb");
+		ft_printf("%s\n", "sb");
 }
 
 void	ft_swap_a_b(list **stack_a, list **stack_b)
 {
 	ft_swap_a(stack_a, true);
 	ft_swap_b(stack_b, true);
-	printf("%s\n", "ss");
+	ft_printf("%s\n", "ss");
 }
 
 void	ft_push_a(list **stack_a, list **stack_b)
@@ -73,7 +73,7 @@ void	ft_push_a(list **stack_a, list **stack_b)
 		temp->next->prev = temp;
 		*stack_a = temp;
 	}
-	printf("%s\n", "pa");
+	ft_printf("%s\n", "pa");
 }
 
 void	ft_push_b(list **stack_a, list **stack_b)
@@ -98,5 +98,5 @@ void	ft_push_b(list **stack_a, list **stack_b)
 		temp->next->prev = temp;
 		*stack_b = temp;
 	}
-	printf("%s\n", "pb");
+	ft_printf("%s\n", "pb");
 }

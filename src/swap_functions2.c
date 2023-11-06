@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:20:40 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/06 17:46:47 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/06 18:12:18 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_rotate_a(list **stack_a, bool print)
 	last_node->next = temp;
 	temp->prev = last_node;
 	if (!print)
-		printf("%s\n", "ra");
+		ft_printf("%s\n", "ra");
 }
 
 void	ft_rotate_b(list **stack_b, bool print)
@@ -43,14 +43,14 @@ void	ft_rotate_b(list **stack_b, bool print)
 	last_node->next = temp;
 	temp->prev = last_node;
 	if (!print)
-		printf("%s\n", "rb");
+		ft_printf("%s\n", "rb");
 }
 
 void	ft_rotate_a_b(list **stack_a, list **stack_b)
 {
 	ft_rotate_a(stack_a, true);
 	ft_rotate_b(stack_b, true);
-	printf("%s\n", "rr");
+	ft_printf("%s\n", "rr");
 }
 
 void	ft_reverse_rotate_a(list **stack_a, bool print)
@@ -65,7 +65,7 @@ void	ft_reverse_rotate_a(list **stack_a, bool print)
 	temp = last_node->prev;
 	temp->next = NULL;
 	if (!print)
-		printf("%s\n", "rra");
+		ft_printf("%s\n", "rra");
 }
 
 void	ft_reverse_rotate_b(list **stack_b, bool print)
@@ -80,5 +80,5 @@ void	ft_reverse_rotate_b(list **stack_b, bool print)
 	temp = last_node->prev;
 	temp->next = NULL;
 	if (!print)
-		printf("%s\n", "rrb");
+		ft_printf("%s\n", "rrb");
 }
