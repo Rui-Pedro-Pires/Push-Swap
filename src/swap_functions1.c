@@ -6,13 +6,13 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 20:22:46 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/02 15:53:47 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:47:27 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_swap_a(list	**stack_a)
+void	ft_swap_a(list	**stack_a, bool print)
 {
 	list	*temp;
 
@@ -27,7 +27,7 @@ void	ft_swap_a(list	**stack_a)
 	printf("%s\n", "sa");
 }
 
-void	ft_swap_b(list	**stack_b)
+void	ft_swap_b(list	**stack_b, bool print)
 {
 	list	*temp;
 

@@ -6,13 +6,13 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:20:40 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/10/31 16:27:09 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:47:38 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_rotate_a(list **stack_a)
+void	ft_rotate_a(list **stack_a, bool print)
 {
 	list	*temp;
 	list	*last_node;
@@ -28,7 +28,7 @@ void	ft_rotate_a(list **stack_a)
 	printf("%s\n", "ra");
 }
 
-void	ft_rotate_b(list **stack_b)
+void	ft_rotate_b(list **stack_b, bool print)
 {
 	list	*temp;
 	list	*last_node;
@@ -51,7 +51,7 @@ void	ft_rotate_a_b(list **stack_a, list **stack_b)
 	printf("%s\n", "rr");
 }
 
-void	ft_reverse_rotate_a(list **stack_a)
+void	ft_reverse_rotate_a(list **stack_a, bool print)
 {
 	list	*temp;
 	list	*last_node;
@@ -65,7 +65,7 @@ void	ft_reverse_rotate_a(list **stack_a)
 	printf("%s\n", "rra");
 }
 
-void	ft_reverse_rotate_b(list **stack_b)
+void	ft_reverse_rotate_b(list **stack_b, bool print)
 {
 	list	*temp;
 	list	*last_node;
