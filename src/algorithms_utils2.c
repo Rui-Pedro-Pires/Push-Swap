@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:07:55 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/06 17:35:02 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:46:00 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_target_a(list *stack_a, list *stack_b)
 			}
 			temp = temp->next;
 		}
-		if (number_save = -21474836478)
+		if (number_save == -21474836478)
 			stack_a->target = ft_max_node(stack_b);
 		else
 			stack_a->target = target_node;
@@ -58,7 +58,7 @@ void	ft_target_b(list *stack_a, list *stack_b)
 			}
 			temp = temp->next;
 		}
-		if (number_save = 21474836478)
+		if (number_save == 21474836478)
 			stack_b->target = ft_min_node(stack_a);
 		else
 			stack_b->target = target_node;
@@ -89,7 +89,7 @@ void	ft_calc_cost(list *stack_a, list *stack_b)
 void	ft_cheapest_node(list *stack_a)
 {
 	list	*cheapest_node;
-	int	cost;
+	long	cost;
 
 	cost = 21474836478;
 	while (stack_a)
@@ -102,4 +102,16 @@ void	ft_cheapest_node(list *stack_a)
 		stack_a = stack_a->next;
 	}
 	cheapest_node->cheapest = true;
+}
+
+void	ft_clean_list(list **stack)
+{
+	list	*temp;
+	
+	while (*stack)
+	{
+		temp = (*stack)->next;
+		free(*stack);
+		*stack = temp;
+	}
 }

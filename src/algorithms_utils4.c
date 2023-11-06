@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:29:43 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/06 17:38:29 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:46:34 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 list	*ft_max_node(list *stack)
 {
 	list	*max_node;
-	int	max_num;
+	long	max_num;
 
 	max_num = -21474836478;
 	while (stack)
@@ -33,7 +33,7 @@ list	*ft_max_node(list *stack)
 list	*ft_min_node(list *stack)
 {
 	list	*min_node;
-	int	min_num;
+	long	min_num;
 
 	min_num = 21474836478;
 	while (stack)
@@ -57,4 +57,17 @@ void	ft_min_to_top(list **stack_a)
 		else
 			ft_reverse_rotate_a(stack_a, false);
 	}
+}
+
+list	*ft_get_cheapest_node(list *stack_a)
+{
+	if (!stack_a)
+		return (NULL);
+	while (stack_a)
+	{
+		if (stack_a->cheapest)
+			return (stack_a);
+		stack_a = stack_a->next;
+	}
+	return (NULL);
 }

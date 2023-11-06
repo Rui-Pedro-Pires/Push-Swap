@@ -38,7 +38,6 @@ $(FT_PRINTF):
 clean:
 	@cd ./include/Libft/ && make clean -s
 	@cd ./include/ft_printf/ && make clean -s
-	$(RM) $(OBJS)
 
 fclean: clean
 	@cd ./include/Libft/ && make fclean -s
