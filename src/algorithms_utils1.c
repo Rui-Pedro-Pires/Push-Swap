@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:02:09 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/09 10:28:41 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/09 12:08:38 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,25 +26,6 @@ void	ft_add_elements2(t_list *stack_a, t_list *stack_b)
 	ft_add_index(stack_a);
 	ft_add_index(stack_b);
 	ft_target_b(stack_a, stack_b);
-}
-
-int	ft_stack_sorted(t_list *stack)
-{
-	int	i;
-	int	x;
-
-	x = ft_stack_len(stack);
-	i = 0;
-	while (stack->next)
-	{
-		if (stack->nb < stack->next->nb)
-			i++;
-		stack = stack->next;
-	}
-	i++;
-	if (i == x)
-		return (1);
-	return (0);
 }
 
 void	ft_add_index(t_list *stack)

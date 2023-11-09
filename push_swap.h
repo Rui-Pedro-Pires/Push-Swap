@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:43:04 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/09 10:32:33 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/09 18:42:11 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include "include/Libft/libft.h"
 # include "include/ft_printf/ft_printf.h"
-# include <stdio.h>
+# include <fcntl.h>
 # include <stdbool.h>
 
 typedef struct s_list 
@@ -55,16 +55,16 @@ t_list	*ft_find_last_node(t_list *stack_a);
 // Swap functions //
 ////////////////////
 
-void	ft_swap_a(t_list	**stack_a, bool print);
-void	ft_swap_b(t_list	**stack_b, bool print);
+void	ft_swap_a(t_list	**stack_a);
+void	ft_swap_b(t_list	**stack_b);
 void	ft_swap_a_b(t_list **stack_a, t_list **stack_b);
 void	ft_push_a(t_list **stack_a, t_list **stack_b);
 void	ft_push_b(t_list **stack_a, t_list **stack_b);
-void	ft_rotate_a(t_list **stack_a, bool print);
-void	ft_rotate_b(t_list **stack_b, bool print);
+void	ft_rotate_a(t_list **stack_a);
+void	ft_rotate_b(t_list **stack_b);
 void	ft_rotate_a_b(t_list **stack_a, t_list **stack_b);
-void	ft_reverse_rotate_a(t_list **stack_a, bool print);
-void	ft_reverse_rotate_b(t_list **stack_b, bool print);
+void	ft_reverse_rotate_a(t_list **stack_a);
+void	ft_reverse_rotate_b(t_list **stack_b);
 void	ft_reverse_rotate_a_b(t_list **stack_a, t_list **stack_b);
 
 ///////////////////////
@@ -95,5 +95,13 @@ t_list	*ft_get_cheapest_node(t_list *stack);
 void	ft_prep_push(t_list **stack, t_list *target, int x);
 void	ft_rotate(t_list **stack_a, t_list **stack_b, t_list *target_node);
 void	ft_rr(t_list **stack_a, t_list **stack_b, t_list *target_node);
+
+///////////
+// BONUS //
+///////////
+
+int	ft_sort_checker(t_list **stack_a, t_list **stack_b, char *command);
+int	ft_strcmp(char *s1, char *s2);
+int	ft_algorithm(t_list **stack_a, t_list **stack_b);
 
 #endif
