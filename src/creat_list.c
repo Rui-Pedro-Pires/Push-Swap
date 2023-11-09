@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:58:44 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/09 09:31:54 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/09 10:27:57 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_creat_list_str(t_list **stack_a, char *numbers)
 {
 	int		i;
 	char	**numbers_splited;
-	
+
 	numbers_splited = ft_split(numbers, ' ');
 	i = 0;
 	if (!ft_check_numbers_str(numbers_splited))
@@ -31,7 +31,7 @@ void	ft_creat_list_str(t_list **stack_a, char *numbers)
 void	ft_creat_list_arg(t_list **stack_a, char **numbers)
 {
 	int	i;
-	
+
 	i = 0;
 	if (!ft_check_numbers_arg(numbers))
 		return ;

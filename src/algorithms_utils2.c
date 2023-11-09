@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:07:55 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/09 09:32:16 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/09 10:27:26 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ void	ft_cheapest_node(t_list *stack_a)
 {
 	t_list	*cheapest_node;
 	long	cost;
+
 	if (!stack_a)
 		return ;
 	cost = 21474836478;
@@ -108,7 +109,7 @@ void	ft_cheapest_node(t_list *stack_a)
 void	ft_clean_list(t_list **stack)
 {
 	t_list	*temp;
-	
+
 	while (*stack)
 	{
 		temp = (*stack)->next;

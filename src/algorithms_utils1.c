@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:02:09 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/09 09:32:22 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/09 10:28:41 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_add_index(t_list *stack)
 {
 	int	i;
 	int	mid;
-	
+
 	i = 0;
 	if (!stack)
 		return ;
@@ -67,4 +67,3 @@ void	ft_add_index(t_list *stack)
 		stack = stack->next;
 	}
 }
-

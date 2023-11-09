@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:43:04 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/09 09:30:51 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/09 10:32:33 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@
 
 typedef struct s_list 
 {
-	int	nb;
-	int	index;
-	int	push_nmoves;
-	bool	cheapest;
-	bool	above_median;
+	int				nb;
+	int				index;
+	int				push_nmoves;
+	bool			cheapest;
+	bool			above_median;
 	struct s_list	*target;
 	struct s_list	*next;
 	struct s_list	*prev;
@@ -46,9 +46,9 @@ void	ft_clean_list(t_list **stack);
 // Utils functions to use on the lists //
 /////////////////////////////////////////
 
-int	ft_stack_len(t_list *stack);
-int	ft_check_numbers_arg(char **numbers);
-int	ft_check_numbers_str(char **numbers);
+int		ft_stack_len(t_list *stack);
+int		ft_check_numbers_arg(char **numbers);
+int		ft_check_numbers_str(char **numbers);
 t_list	*ft_find_last_node(t_list *stack_a);
 
 ////////////////////
@@ -94,6 +94,6 @@ void	ft_move_to_b(t_list **stack_a, t_list **stack_b);
 t_list	*ft_get_cheapest_node(t_list *stack);
 void	ft_prep_push(t_list **stack, t_list *target, int x);
 void	ft_rotate(t_list **stack_a, t_list **stack_b, t_list *target_node);
-void	ft_reverse_rotate(t_list **stack_a, t_list **stack_b, t_list *target_node);
+void	ft_rr(t_list **stack_a, t_list **stack_b, t_list *target_node);
 
 #endif

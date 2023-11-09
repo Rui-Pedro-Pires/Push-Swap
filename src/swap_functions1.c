@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 20:22:46 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/09 09:31:12 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/09 10:26:41 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_swap_a_b(t_list **stack_a, t_list **stack_b)
 void	ft_push_a(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*temp;
-	
+
 	if (!*stack_b)
 		return ;
 	temp = *stack_b;
@@ -79,7 +79,7 @@ void	ft_push_a(t_list **stack_a, t_list **stack_b)
 void	ft_push_b(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*temp;
-	
+
 	if (!*stack_a)
 		return ;
 	temp = *stack_a;

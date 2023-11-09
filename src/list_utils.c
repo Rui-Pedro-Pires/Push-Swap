@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 15:41:03 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/09 09:31:49 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/09 10:25:24 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_check_numbers_arg(char **numbers)
 {
 	int	i;
 	int	x;
-	
+
 	i = 0;
 	while (numbers[i])
 	{
@@ -56,7 +56,7 @@ int	ft_check_numbers_str(char **numbers)
 {
 	int	i;
 	int	x;
-	
+
 	i = 0;
 	while (numbers[i])
 	{

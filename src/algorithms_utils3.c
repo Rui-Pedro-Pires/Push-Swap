@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 11:15:17 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/09 09:32:10 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/09 10:33:25 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,9 @@ void	ft_move_to_b(t_list **stack_a, t_list **stack_b)
 	cheapest_node = ft_get_cheapest_node(*stack_a);
 	if (cheapest_node->above_median && cheapest_node->target->above_median)
 		ft_rotate(stack_a, stack_b, cheapest_node);
-	else if (!(cheapest_node->above_median) && !(cheapest_node->target->above_median))
-		ft_reverse_rotate(stack_a, stack_b, cheapest_node);
+	else if (!(cheapest_node->above_median) 
+		&& !(cheapest_node->target->above_median))
+		ft_rr(stack_a, stack_b, cheapest_node);
 	ft_prep_push(stack_a, cheapest_node, 1);
 	ft_prep_push(stack_b, cheapest_node->target, 2);
 	ft_push_b(stack_a, stack_b);
@@ -61,7 +62,7 @@ void	ft_rotate(t_list **stack_a, t_list **stack_b, t_list *target_node)
 	ft_add_index(*stack_b);
 }
 
-void	ft_reverse_rotate(t_list **stack_a, t_list **stack_b, t_list *target_node)
+void	ft_rr(t_list **stack_a, t_list **stack_b, t_list *target_node)
 {
 	while (*stack_a != target_node && *stack_b != (target_node->target))
 		ft_reverse_rotate_a_b(stack_a, stack_b);
