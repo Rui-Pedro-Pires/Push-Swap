@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:12:10 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/09 18:45:09 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/09 18:49:33 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,10 @@ int	ft_sort_checker(t_list **stack_a, t_list **stack_b, char *command)
 		return (0);
 	}
 	return (1);
+}
+
+void	ft_clean(t_list **stack_a, t_list **stack_b)
+{
+	ft_clean_list(stack_a);
+	ft_clean_list(stack_b);
 }

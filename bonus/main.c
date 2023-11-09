@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:42:06 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/09 18:40:55 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/09 18:50:12 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,14 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	if (!ft_algorithm(&stack_a, &stack_b))
+	{
+		ft_clean(&stack_a, &stack_b);
 		return (2);
+	}
 	if (ft_stack_sorted(stack_a))
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
-	ft_clean_list(&stack_a);
-	ft_clean_list(&stack_b);
+	ft_clean(&stack_a, &stack_b);
 	return (0);
 }
