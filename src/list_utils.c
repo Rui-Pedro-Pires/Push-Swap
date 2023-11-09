@@ -6,13 +6,13 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 15:41:03 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/06 17:46:38 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/09 09:31:49 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_stack_len(list *stack)
+int	ft_stack_len(t_list *stack)
 {
 	int	i;
 
@@ -77,7 +77,7 @@ int	ft_check_numbers_str(char **numbers)
 	return (1);
 }
 
-list	*ft_find_last_node(list *stack)
+t_list	*ft_find_last_node(t_list *stack)
 {
 	if (!stack)
 		return (NULL);

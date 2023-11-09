@@ -6,13 +6,13 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 11:00:30 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/06 17:46:33 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/09 09:31:59 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_three_sort(list **stack_a)
+void	ft_three_sort(t_list **stack_a)
 {
 	if ((*stack_a)->nb > (*stack_a)->next->nb && (*stack_a)->nb > (*stack_a)->next->next->nb)
 		ft_rotate_a(stack_a, false);
@@ -22,7 +22,7 @@ void	ft_three_sort(list **stack_a)
 		ft_swap_a(stack_a, false);
 }
 
-void	ft_sort(list **stack_a, list **stack_b)
+void	ft_sort(t_list **stack_a, t_list **stack_b)
 {
 	int	stack_len;
 

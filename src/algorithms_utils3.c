@@ -6,13 +6,13 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 11:15:17 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/06 17:46:10 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/09 09:32:10 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_prep_push(list **stack, list *target, int x)
+void	ft_prep_push(t_list **stack, t_list *target, int x)
 {
 	while ((*stack) != target)
 	{
@@ -33,9 +33,9 @@ void	ft_prep_push(list **stack, list *target, int x)
 	}
 }
 
-void	ft_move_to_b(list **stack_a, list **stack_b)
+void	ft_move_to_b(t_list **stack_a, t_list **stack_b)
 {
-	list	*cheapest_node;
+	t_list	*cheapest_node;
 
 	cheapest_node = ft_get_cheapest_node(*stack_a);
 	if (cheapest_node->above_median && cheapest_node->target->above_median)
@@ -47,13 +47,13 @@ void	ft_move_to_b(list **stack_a, list **stack_b)
 	ft_push_b(stack_a, stack_b);
 }
 
-void	ft_move_to_a(list **stack_a, list **stack_b)
+void	ft_move_to_a(t_list **stack_a, t_list **stack_b)
 {
 	ft_prep_push(stack_a, (*stack_b)->target, 1);
 	ft_push_a(stack_a, stack_b);
 }
 
-void	ft_rotate(list **stack_a, list **stack_b, list *target_node)
+void	ft_rotate(t_list **stack_a, t_list **stack_b, t_list *target_node)
 {
 	while (*stack_a != target_node && *stack_b != (target_node->target))
 		ft_rotate_a_b(stack_a, stack_b);
@@ -61,7 +61,7 @@ void	ft_rotate(list **stack_a, list **stack_b, list *target_node)
 	ft_add_index(*stack_b);
 }
 
-void	ft_reverse_rotate(list **stack_a, list **stack_b, list *target_node)
+void	ft_reverse_rotate(t_list **stack_a, t_list **stack_b, t_list *target_node)
 {
 	while (*stack_a != target_node && *stack_b != (target_node->target))
 		ft_reverse_rotate_a_b(stack_a, stack_b);

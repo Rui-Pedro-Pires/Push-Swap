@@ -6,15 +6,15 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:29:43 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/06 17:57:09 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/09 09:32:05 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-list	*ft_max_node(list *stack)
+t_list	*ft_max_node(t_list *stack)
 {
-	list	*max_node;
+	t_list	*max_node;
 	long	max_num;
 
 	max_num = -21474836478;
@@ -30,9 +30,9 @@ list	*ft_max_node(list *stack)
 	return (max_node);
 }
 
-list	*ft_min_node(list *stack)
+t_list	*ft_min_node(t_list *stack)
 {
-	list	*min_node;
+	t_list	*min_node;
 	long	min_num;
 
 	min_num = 21474836478;
@@ -48,7 +48,7 @@ list	*ft_min_node(list *stack)
 	return (min_node);
 }
 
-void	ft_min_to_top(list **stack_a)
+void	ft_min_to_top(t_list **stack_a)
 {
 	while ((*stack_a)->nb != ft_min_node(*stack_a)->nb)
 	{
@@ -59,7 +59,7 @@ void	ft_min_to_top(list **stack_a)
 	}
 }
 
-list	*ft_get_cheapest_node(list *stack_a)
+t_list	*ft_get_cheapest_node(t_list *stack_a)
 {
 	if (!stack_a)
 		return (NULL);

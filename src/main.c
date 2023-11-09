@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:42:06 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/06 18:24:00 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/09 09:31:39 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	list	*stack_a;
-	list	*stack_b;
+	t_list	*stack_a;
+	t_list	*stack_b;
 	
 	stack_a = NULL;
 	stack_b = NULL;

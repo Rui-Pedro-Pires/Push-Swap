@@ -6,13 +6,13 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:58:44 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/06 16:30:13 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/09 09:31:54 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_creat_list_str(list **stack_a, char *numbers)
+void	ft_creat_list_str(t_list **stack_a, char *numbers)
 {
 	int		i;
 	char	**numbers_splited;
@@ -28,7 +28,7 @@ void	ft_creat_list_str(list **stack_a, char *numbers)
 	}
 }
 
-void	ft_creat_list_arg(list **stack_a, char **numbers)
+void	ft_creat_list_arg(t_list **stack_a, char **numbers)
 {
 	int	i;
 	
@@ -42,12 +42,12 @@ void	ft_creat_list_arg(list **stack_a, char **numbers)
 	}
 }
 
-void	ft_creat_new_node(list **stack_a, int nb)
+void	ft_creat_new_node(t_list **stack_a, int nb)
 {
-	list	*new_node;
-	list	*last_node;
+	t_list	*new_node;
+	t_list	*last_node;
 
-	new_node = malloc(sizeof(list));
+	new_node = malloc(sizeof(t_list));
 	if (!new_node)
 		return ;
 	last_node = ft_find_last_node(*stack_a);
@@ -60,7 +60,7 @@ void	ft_creat_new_node(list **stack_a, int nb)
 		last_node->next = new_node;
 }
 
-void	ft_creat_list(list **stack_a, int argc, char **argv)
+void	ft_creat_list(t_list **stack_a, int argc, char **argv)
 {
 	if (argc == 2)
 		ft_creat_list_str(stack_a, argv[0]);

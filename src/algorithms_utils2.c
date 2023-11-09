@@ -6,16 +6,16 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:07:55 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/06 18:07:11 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/09 09:32:16 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_target_a(list *stack_a, list *stack_b)
+void	ft_target_a(t_list *stack_a, t_list *stack_b)
 {
-	list	*temp;
-	list	*target_node;
+	t_list	*temp;
+	t_list	*target_node;
 	long	number_save;
 
 	while (stack_a)
@@ -39,10 +39,10 @@ void	ft_target_a(list *stack_a, list *stack_b)
 	}
 }
 
-void	ft_target_b(list *stack_a, list *stack_b)
+void	ft_target_b(t_list *stack_a, t_list *stack_b)
 {
-	list	*temp;
-	list	*target_node;
+	t_list	*temp;
+	t_list	*target_node;
 	long	number_save;
 
 	while (stack_b)
@@ -66,7 +66,7 @@ void	ft_target_b(list *stack_a, list *stack_b)
 	}
 }
 
-void	ft_calc_cost(list *stack_a, list *stack_b)
+void	ft_calc_cost(t_list *stack_a, t_list *stack_b)
 {
 	int	stack_len_a;
 	int	stack_len_b;
@@ -86,9 +86,9 @@ void	ft_calc_cost(list *stack_a, list *stack_b)
 	}
 }
 
-void	ft_cheapest_node(list *stack_a)
+void	ft_cheapest_node(t_list *stack_a)
 {
-	list	*cheapest_node;
+	t_list	*cheapest_node;
 	long	cost;
 	if (!stack_a)
 		return ;
@@ -105,9 +105,9 @@ void	ft_cheapest_node(list *stack_a)
 	cheapest_node->cheapest = true;
 }
 
-void	ft_clean_list(list **stack)
+void	ft_clean_list(t_list **stack)
 {
-	list	*temp;
+	t_list	*temp;
 	
 	while (*stack)
 	{

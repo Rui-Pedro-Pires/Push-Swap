@@ -6,13 +6,13 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:02:09 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/06 18:23:20 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/09 09:32:22 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_add_elements1(list *stack_a, list *stack_b)
+void	ft_add_elements1(t_list *stack_a, t_list *stack_b)
 {
 	ft_add_index(stack_a);
 	ft_add_index(stack_b);
@@ -21,14 +21,14 @@ void	ft_add_elements1(list *stack_a, list *stack_b)
 	ft_cheapest_node(stack_a);
 }
 
-void	ft_add_elements2(list *stack_a, list *stack_b)
+void	ft_add_elements2(t_list *stack_a, t_list *stack_b)
 {
 	ft_add_index(stack_a);
 	ft_add_index(stack_b);
 	ft_target_b(stack_a, stack_b);
 }
 
-int	ft_stack_sorted(list *stack)
+int	ft_stack_sorted(t_list *stack)
 {
 	int	i;
 	int	x;
@@ -47,7 +47,7 @@ int	ft_stack_sorted(list *stack)
 	return (0);
 }
 
-void	ft_add_index(list *stack)
+void	ft_add_index(t_list *stack)
 {
 	int	i;
 	int	mid;

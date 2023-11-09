@@ -6,15 +6,15 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 20:22:46 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/06 18:12:02 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/09 09:31:12 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_swap_a(list	**stack_a, bool print)
+void	ft_swap_a(t_list	**stack_a, bool print)
 {
-	list	*temp;
+	t_list	*temp;
 
 	temp = (*stack_a)->next->next;
 	if (temp)
@@ -28,9 +28,9 @@ void	ft_swap_a(list	**stack_a, bool print)
 		ft_printf("%s\n", "sa");
 }
 
-void	ft_swap_b(list	**stack_b, bool print)
+void	ft_swap_b(t_list	**stack_b, bool print)
 {
-	list	*temp;
+	t_list	*temp;
 
 	temp = (*stack_b)->next->next;
 	if (temp)
@@ -44,16 +44,16 @@ void	ft_swap_b(list	**stack_b, bool print)
 		ft_printf("%s\n", "sb");
 }
 
-void	ft_swap_a_b(list **stack_a, list **stack_b)
+void	ft_swap_a_b(t_list **stack_a, t_list **stack_b)
 {
 	ft_swap_a(stack_a, true);
 	ft_swap_b(stack_b, true);
 	ft_printf("%s\n", "ss");
 }
 
-void	ft_push_a(list **stack_a, list **stack_b)
+void	ft_push_a(t_list **stack_a, t_list **stack_b)
 {
-	list	*temp;
+	t_list	*temp;
 	
 	if (!*stack_b)
 		return ;
@@ -76,9 +76,9 @@ void	ft_push_a(list **stack_a, list **stack_b)
 	ft_printf("%s\n", "pa");
 }
 
-void	ft_push_b(list **stack_a, list **stack_b)
+void	ft_push_b(t_list **stack_a, t_list **stack_b)
 {
-	list	*temp;
+	t_list	*temp;
 	
 	if (!*stack_a)
 		return ;
