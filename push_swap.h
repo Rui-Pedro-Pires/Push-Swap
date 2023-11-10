@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:43:04 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/10 09:50:05 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/10 12:39:30 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,9 +100,9 @@ void	ft_rr(t_list **stack_a, t_list **stack_b, t_list *target_node);
 // BONUS //
 ///////////
 
-int	ft_sort_checker(t_list **stack_a, t_list **stack_b, char *command);
-int	ft_strcmp(char *s1, char *s2);
-int	ft_algorithm(t_list **stack_a, t_list **stack_b);
+int		ft_sort_checker(t_list **stack_a, t_list **stack_b, char *command);
+int		ft_strcmp(char *s1, char *s2);
+int		ft_algorithm(t_list **stack_a, t_list **stack_b);
 void	ft_clean(t_list **stack_a, t_list **stack_b);
 
 #endif

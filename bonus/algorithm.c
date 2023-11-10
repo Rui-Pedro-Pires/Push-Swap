@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:12:10 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/10 09:48:47 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/10 14:21:27 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,24 @@ int	ft_strcmp(char *s1, char *s2)
 int	ft_algorithm(t_list **stack_a, t_list **stack_b)
 {
 	char	command[10];
-	int	n;
+	int		n;
 
-	while ((n = read(STDIN_FILENO, command, 10)) > 0)
+	n = 1;
+	while (n > 0)
 	{
+		n = read(STDIN_FILENO, command, 10);
+		if (n == 0)
+			return (1);
 		command[n] = '\0';
 		if (!ft_sort_checker(stack_a, stack_b, command))
+		{
+			ft_printf("ERROR\n");
 			return (0);
+		}
 	}
 	return (1);
 }
+
 int	ft_sort_checker(t_list **stack_a, t_list **stack_b, char *command)
 {
 	if (ft_strcmp(command, "sa\n") == 0)
@@ -64,10 +72,7 @@ int	ft_sort_checker(t_list **stack_a, t_list **stack_b, char *command)
 	else if (ft_strcmp(command, "rrr\n") == 0)
 		ft_reverse_rotate_a_b(stack_a, stack_b);
 	else
-	{
-		ft_printf("ERROR\n");
 		return (0);
-	}
 	return (1);
 }
 

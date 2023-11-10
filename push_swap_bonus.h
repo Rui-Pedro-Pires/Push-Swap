@@ -6,12 +6,12 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:43:04 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/10 09:51:27 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/10 14:06:09 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -22,6 +22,7 @@
 
 typedef struct s_list 
 {
+	int				nb;
 	struct s_list	*target;
 	struct s_list	*next;
 	struct s_list	*prev;
@@ -67,9 +68,9 @@ void	ft_reverse_rotate_a_b(t_list **stack_a, t_list **stack_b);
 // BONUS //
 ///////////
 
-int	ft_sort_checker(t_list **stack_a, t_list **stack_b, char *command);
-int	ft_strcmp(char *s1, char *s2);
-int	ft_algorithm(t_list **stack_a, t_list **stack_b);
+int		ft_sort_checker(t_list **stack_a, t_list **stack_b, char *command);
+int		ft_strcmp(char *s1, char *s2);
+int		ft_algorithm(t_list **stack_a, t_list **stack_b);
 void	ft_clean(t_list **stack_a, t_list **stack_b);
 
 #endif
