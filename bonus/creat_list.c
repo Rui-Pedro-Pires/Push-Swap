@@ -6,11 +6,11 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:58:44 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/09 12:08:51 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/10 09:48:59 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../push_swap_bonus.h"
 
 void	ft_creat_list_str(t_list **stack_a, char *numbers)
 {
@@ -28,6 +28,13 @@ void	ft_creat_list_str(t_list **stack_a, char *numbers)
 		ft_creat_new_node(stack_a, ft_atoi(numbers_splited[i]));
 		i++;
 	}
+	i = 0;
+	while (numbers_splited[i])
+	{
+		free(numbers_splited[i]);
+		i++;
+	}
+	free(numbers_splited);
 }
 
 void	ft_creat_list_arg(t_list **stack_a, char **numbers)
@@ -75,6 +82,8 @@ int	ft_stack_sorted(t_list *stack)
 	int	i;
 	int	x;
 
+	if (!stack)
+		return (0);
 	x = ft_stack_len(stack);
 	i = 0;
 	while (stack->next)

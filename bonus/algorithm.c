@@ -6,11 +6,11 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:12:10 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/09 18:49:33 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/10 09:48:47 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../push_swap_bonus.h"
 
 int	ft_strcmp(char *s1, char *s2)
 {
@@ -73,6 +73,8 @@ int	ft_sort_checker(t_list **stack_a, t_list **stack_b, char *command)
 
 void	ft_clean(t_list **stack_a, t_list **stack_b)
 {
-	ft_clean_list(stack_a);
-	ft_clean_list(stack_b);
+	if (stack_a)
+		ft_clean_list(stack_a);
+	if (stack_b)
+		ft_clean_list(stack_b);
 }
