@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:58:44 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/10 18:41:28 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/10 20:15:25 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	ft_creat_new_node(t_list **stack_a, int nb)
 		return ;
 	last_node = ft_find_last_node(*stack_a);
 	new_node->nb = nb;
+	new_node->cheapest = false;
 	new_node->prev = last_node;
 	new_node->next = NULL;
 	if (!last_node)
