@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 11:00:30 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/09 10:26:20 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/10 18:41:40 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,17 @@ void	ft_sort(t_list **stack_a, t_list **stack_b)
 	}
 	ft_add_index(*stack_a);
 	ft_min_to_top(stack_a);
+}
+
+void	ft_free(char **numbers_splited)
+{
+	int	i;
+
+	i = 0;
+	while (numbers_splited[i])
+	{
+		free(numbers_splited[i]);
+		i++;
+	}
+	free(numbers_splited);
 }

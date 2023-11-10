@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algorithm.c                                        :+:      :+:    :+:   */
+/*   algorithm_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 12:12:10 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/10 14:21:27 by ruiolive         ###   ########.fr       */
+/*   Created: 2023/11/10 18:38:12 by ruiolive          #+#    #+#             */
+/*   Updated: 2023/11/10 18:40:15 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,17 @@ void	ft_clean(t_list **stack_a, t_list **stack_b)
 		ft_clean_list(stack_a);
 	if (stack_b)
 		ft_clean_list(stack_b);
+}
+
+void	ft_free(char **numbers_splited)
+{
+	int	i;
+
+	i = 0;
+	while (numbers_splited[i])
+	{
+		free(numbers_splited[i]);
+		i++;
+	}
+	free(numbers_splited);
 }

@@ -10,13 +10,13 @@ SRC = ./src/creat_list.c\
 	./src/algorithms_utils4.c\
 	./src/main.c\
 
-BONUS_SRC = ./bonus/creat_list.c\
-	./bonus/list_utils.c\
-	./bonus/swap_functions1.c\
-	./bonus/swap_functions2.c\
-	./bonus/swap_functions3.c\
-	./bonus/main.c\
-	./bonus/algorithm.c\
+BONUS_SRC = ./bonus/creat_list_bonus.c\
+	./bonus/list_utils_bonus.c\
+	./bonus/swap_functions1_bonus.c\
+	./bonus/swap_functions2_bonus.c\
+	./bonus/swap_functions3_bonus.c\
+	./bonus/main_bonus.c\
+	./bonus/algorithm_bonus.c\
 
 CC = cc
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   creat_list.c                                       :+:      :+:    :+:   */
+/*   creat_list_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 11:58:44 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/10 09:48:59 by ruiolive         ###   ########.fr       */
+/*   Created: 2023/11/10 18:38:19 by ruiolive          #+#    #+#             */
+/*   Updated: 2023/11/10 18:41:09 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,16 @@ void	ft_creat_list_str(t_list **stack_a, char *numbers)
 	numbers_splited = ft_split(numbers, ' ');
 	i = 0;
 	if (!ft_check_numbers_str(numbers_splited))
+	{
+		ft_free(numbers_splited);
 		return ;
+	}
 	while (numbers_splited[i])
 	{
 		ft_creat_new_node(stack_a, ft_atoi(numbers_splited[i]));
 		i++;
 	}
-	i = 0;
-	while (numbers_splited[i])
-	{
-		free(numbers_splited[i]);
-		i++;
-	}
-	free(numbers_splited);
+	ft_free(numbers_splited);
 }
 
 void	ft_creat_list_arg(t_list **stack_a, char **numbers)

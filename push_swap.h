@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:43:04 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/10 12:39:30 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/10 18:40:35 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	ft_creat_list_arg(t_list **stack_a, char **numbers);
 void	ft_creat_new_node(t_list **stack_a, int nb);
 void	ft_creat_list(t_list **stack_a, int argc, char **argv);
 void	ft_clean_list(t_list **stack);
+void	ft_free(char **numbers_splited);
 
 /////////////////////////////////////////
 // Utils functions to use on the lists //
