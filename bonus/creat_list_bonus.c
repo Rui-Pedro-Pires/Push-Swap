@@ -59,7 +59,6 @@ void	ft_creat_new_node(t_list **stack_a, int nb)
 	last_node = ft_find_last_node(*stack_a);
 	new_node->nb = nb;
 	new_node->prev = last_node;
-	new_node->cheapest = false;
 	new_node->next = NULL;
 	if (!last_node)
 		*stack_a = new_node;

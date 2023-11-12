@@ -23,7 +23,6 @@
 typedef struct s_list 
 {
 	int				nb;
-	struct s_list	*target;
 	struct s_list	*next;
 	struct s_list	*prev;
 }	t_list;
