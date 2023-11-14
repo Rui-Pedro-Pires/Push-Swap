@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 18:38:12 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/10 18:40:15 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/13 09:49:02 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_algorithm(t_list **stack_a, t_list **stack_b)
 		command[n] = '\0';
 		if (!ft_sort_checker(stack_a, stack_b, command))
 		{
-			ft_printf("ERROR\n");
+			write (STDERR_FILENO, "Error\n", 6);
 			return (0);
 		}
 	}

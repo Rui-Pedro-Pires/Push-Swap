@@ -53,12 +53,12 @@ $(FT_PRINTF):
 clean:
 	@cd ./include/Libft/ && make clean -s
 	@cd ./include/ft_printf/ && make clean -s
-	$(RM) $(OBJS)
+	$(RM) -f $(OBJS)
 
 clean_bonus:
 	@cd ./include/Libft/ && make clean -s
 	@cd ./include/ft_printf/ && make clean -s
-	$(RM) $(BONUS_OBJS)
+	$(RM) -f $(BONUS_OBJS)
 
 fclean: clean
 	@cd ./include/Libft/ && make fclean -s

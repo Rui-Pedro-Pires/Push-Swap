@@ -6,7 +6,7 @@
 /*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:42:06 by ruiolive          #+#    #+#             */
-/*   Updated: 2023/11/09 11:14:53 by ruiolive         ###   ########.fr       */
+/*   Updated: 2023/11/13 09:34:47 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 		ft_creat_list(&stack_a, argc, argv + 1);
 	if (!stack_a)
 	{
-		ft_printf("%s\n", "Error");
+		write (STDERR_FILENO, "Error\n", 6);
 		return (1);
 	}
 	if (!ft_stack_sorted(stack_a))
