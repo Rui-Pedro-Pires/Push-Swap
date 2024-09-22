@@ -68,6 +68,3 @@ This will output the list of instructions to sort the stack.
 ## External Functions
 The project uses the following external functions:
 - `read`, `write`, `malloc`, `free`, `exit`.
-
-## License
-This project is licensed under the MIT License.
