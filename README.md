@@ -1,83 +1,73 @@
 # Push_swap
 
-## Project Overview
+## Description
+**Push_swap** is a project where I developed a sorting algorithm for a stack of integers using a limited set of operations. The challenge was to sort the stack in ascending order while minimizing the number of moves. This project introduced me to algorithmic complexity and how different sorting methods perform based on the input configuration.
 
-The **Push_swap** project is a sorting algorithm challenge that requires sorting data on a stack using a limited set of operations and achieving the smallest number of moves. The goal is to manipulate two stacks, **a** and **b**, using specific operations to sort a list of integers provided as input.
+In this project, I improved my understanding of sorting algorithms, stack data structures, and optimized problem-solving in C.
 
-## How It Works
+## Features
+- Two stacks (`a` and `b`) where `a` initially holds a list of integers and `b` is empty.
+- Operations available:
+  - `sa` (swap a): Swaps the first two elements of stack `a`.
+  - `sb` (swap b): Swaps the first two elements of stack `b`.
+  - `ss`: Performs `sa` and `sb` simultaneously.
+  - `pa` (push a): Pushes the top element of `b` to `a`.
+  - `pb` (push b): Pushes the top element of `a` to `b`.
+  - `ra` (rotate a): Shifts all elements of `a` up by 1.
+  - `rb` (rotate b): Shifts all elements of `b` up by 1.
+  - `rr`: Performs `ra` and `rb` simultaneously.
+  - `rra` (reverse rotate a): Shifts all elements of `a` down by 1.
+  - `rrb` (reverse rotate b): Shifts all elements of `b` down by 1.
+  - `rrr`: Performs `rra` and `rrb` simultaneously.
+- The program calculates the minimal sequence of operations required to sort `a` in ascending order.
 
-- You start with two stacks:
-  - **Stack a**: Contains a set of random integers.
-  - **Stack b**: Starts empty.
-  
-- The goal is to sort all integers in **stack a** in ascending order using the fewest number of operations.
+### Example
+Here’s an example of how some of the operations work:
+1. Start with stack `a` containing: 2, 1, 3, 6, 5, 8.
+2. Perform `sa` to swap the first two elements of `a`: 
+   - Result: 1, 2, 3, 6, 5, 8.
+3. Perform `pb` three times to move the first three elements from `a` to `b`.
+4. Perform `ra` and `rb` (equivalent to `rr`) to rotate both stacks up by one.
 
-### Available Operations:
-- `sa` / `sb`: Swap the first two elements of stack a or b.
-- `ss`: Perform both `sa` and `sb`.
-- `pa` / `pb`: Push the top element of stack b to a, or vice versa.
-- `ra` / `rb`: Rotate stack a or b (shift up all elements).
-- `rr`: Perform both `ra` and `rb`.
-- `rra` / `rrb`: Reverse rotate stack a or b (shift down all elements).
-- `rrr`: Perform both `rra` and `rrb`.
+By following such operations, the program minimizes the steps required to sort the numbers.
 
-### Example:
+## Bonus Features
+If the mandatory part works perfectly, I implemented a bonus:
+- Created a `checker` program that verifies if the list of operations actually sorts the stack properly.
+
+## Installation
+1. Clone my repository:
+   ```bash
+   git clone https://github.com/your-username/push_swap.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd push_swap
+   ```
+3. Compile the project with the provided `Makefile`:
+   ```bash
+   make
+   ```
+
+## Usage
+To sort a stack:
 ```bash
 ./push_swap 2 1 3 6 5 8
-sa
-pb
-pb
-pb
-sa
-pa
-pa
-pa
-```
-This example sorts the integers with 8 operations.
-
-## Mandatory Part
-
-- The program **push_swap** takes a list of integers as arguments, with the first argument being at the top of **stack a**.
-- It outputs the smallest list of instructions to sort the stack.
-- If no parameters are given, the program does nothing.
-- The program will display `Error` if there are invalid inputs (non-integer, duplicates, etc.).
-
-### Functions Allowed:
-- `read`, `write`, `malloc`, `free`, `exit`
-- `ft_printf` (or an equivalent custom printf).
-
-### Error Handling:
-- Handle invalid input such as non-integers, numbers exceeding integer limits, or duplicates.
-
-## Bonus Part
-
-- Implement a **checker** program that verifies if a list of instructions sorts **stack a** correctly.
-- **Checker** reads a list of instructions and checks if after applying them, **stack a** is sorted and **stack b** is empty.
-- **Checker** will output `OK` if the list is valid and `KO` if not.
-
-## Compilation
-
-To compile the project, run:
-```bash
-make
 ```
 
-This will generate the executable `push_swap`.
+This will output the list of instructions to sort the stack.
 
-### Running Push_swap:
-```bash
-./push_swap [list of integers]
-```
+### Benchmark
+- For 100 random numbers, the program must sort in fewer than 700 operations for a minimal grade.
+- For 500 random numbers, the program must sort in fewer than 5500 operations to achieve a perfect score.
 
-### Example:
-```bash
-./push_swap 4 67 3 87 23
-```
+## Requirements
+- C programming language.
+- Understanding of stack operations and sorting algorithms.
 
-## Conclusion
+## External Functions
+The project uses the following external functions:
+- `read`, `write`, `malloc`, `free`, `exit`.
 
-This project provided valuable insights into algorithm optimization, stack operations, and handling constraints. The challenge was to ensure the program sorts integers using the fewest possible moves.
-
---- 
-
-This README covers the basics of the project while keeping it concise and easy to follow.
+## License
+This project is licensed under the MIT License.
