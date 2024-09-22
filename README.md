@@ -38,7 +38,7 @@ If the mandatory part works perfectly, I implemented a bonus:
 ## Installation
 1. Clone my repository:
    ```bash
-   git clone https://github.com/your-username/push_swap.git
+   git clone git@github.com:Rui-Pedro-Pires/42Push_Swap.git
    ```
 2. Navigate to the project directory:
    ```bash
