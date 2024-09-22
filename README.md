@@ -38,11 +38,11 @@ I also implemented the following bonus:
 ## Installation
 1. Clone my repository:
    ```bash
-   git clone git@github.com:Rui-Pedro-Pires/42Push_Swap.git
+   git clone git@github.com:Rui-Pedro-Pires/Push-Swap.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd push_swap
+   cd Push-Swap
    ```
 3. Compile the project with the provided `Makefile`:
    ```bash
