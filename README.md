@@ -32,7 +32,7 @@ Here’s an example of how some of the operations work:
 By following such operations, the program minimizes the steps required to sort the numbers.
 
 ## Bonus Features
-If the mandatory part works perfectly, I implemented a bonus:
+I also implemented the following bonus:
 - Created a `checker` program that verifies if the list of operations actually sorts the stack properly.
 
 ## Installation
